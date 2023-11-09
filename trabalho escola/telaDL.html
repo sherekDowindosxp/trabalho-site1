@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Tela De Login</title>
+</head>
+<body>
+    <header class="header">
+        <img src="images-PhotoRoom.png-PhotoRoom.png" width="100px">
+        <nav class="nav-links">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="sobre.html">Sobre</a>
+        </nav>
+        <a class="button" href="telaDL.html" onclick="exibirAlerta">Login</a>
+        <a class="button" href="sobremim.html" onclick="exibirAlerta1">Sobre Mim</a>
+    </header>
+    <div class="login-container">
+        <h2>Tela de Login</h2>
+        <form class="login-form">
+            <div class="form-group">
+                <label class="form-label" for="username">Usuário</label>
+                <input type="text" id="username" class="form-input" placeholder="Digite o usuário">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="password">Senha</label>
+                <input type="password" id="password" class="form-input" placeholder="Digite a senha">
+            </div>
+            <button type="submit" class="form-submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        function exibirAlerta() {
+    alert("Você clicou no login")
+}
+function exibirAlerta1() {
+    alert("Você clicou no botao sobre mim")
+}
+
+var database = [
+{ username: "admin", password: "123456" },
+{ username: "user", password: "123" },
+{ username: "joao", password: "123"},
+{ username: "maria", password: "123"},
+{ username: "pedro", password: "123"},
+{ username: "jose", password: "123"},
+{ username: "kauan", password: "123"}
+];
+
+
+function verificarUsuario(username, password) {
+for (var i = 0; i < database.length; i++) {
+if (database[i].username === username && database[i].password === password) {
+    return true;
+}
+}
+return false;
+}
+
+
+document.querySelector(".login-form").addEventListener("submit", function (event) {
+event.preventDefault();
+
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+
+if (verificarUsuario(username, password)) {
+alert("Login bem-sucedido!");
+
+sessionStorage.setItem("username", username);
+
+window.location.href = "areaAL.html";
+} else {
+alert("Nome de usuário ou senha inválidos!");
+}
+});
+    </script>
+</body>
+</html>

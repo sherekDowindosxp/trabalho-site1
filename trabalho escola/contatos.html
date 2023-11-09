@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cabeçalho Gamer</title>
+    <style>
+        body {
+            background-color: #1f1f1f;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ffffff;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            background-color: #9c31da;
+            border-radius: 0px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="images-PhotoRoom.png-PhotoRoom.png" width="100px">
+        <nav class="nav-links">
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">Sobre</a>
+            <a class="nav-link" href="#">Contatos</a>
+        </nav>
+        <a class="button" href="telaDL.html">Login</a>
+        <a class="button" href="sobremim.html">Sobre Mim</a>
+    </header>
+</body>
+</html>
